@@ -1,2 +1,2 @@
 # Seam Carving
-Small app which allows a user to upload/save images which can be horizontally cropped using seam carving.
+Small app which allows a user horizontally crop images using seam carving instead of traditional cropping methods
