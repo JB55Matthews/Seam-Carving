@@ -16,5 +16,22 @@ will be quickened substantially ideally.
 
 ## Basics of Seam Carving
 
+Seam carving uses three main steps in processing the image to dynamically cut a "seam", a line of connecting pixels from the top of the image
+to the bottom, from the image. 
+
+### Edge Detection:
+![Dali2EdgeDetect](https://github.com/user-attachments/assets/cc178140-f86f-4ea8-9b48-f84bd7744451)
+
+Firstly, we run a simple edge detection algorithm across the image. The information that seam carving attempts to preserve is based on the strong edges
+in the image, so backgroup material is often cut in way of keeping foreground objects present. We do this by convolving the image using the sobel operator.
+
+### Energy:
+![Dali2Energy](https://github.com/user-attachments/assets/eef7fdea-a3ff-466c-a818-cad1530c4434)
+
+Second we take the edge detected image and compute what is called an energy image. To identify a path of least edges from the top to the bottom, we dynamically fill in 
+a new table bottom-up with path-summed edge values. Starting at the bottom row, each value (0-255 as image is black and white, and then normalized to 0-1) is filled into the table,
+Then for each next row, row[i] = edge[row[i]] + max((row-1)[i-1], (row-1)[i1], (row-1)[i+1]), i.e, the current edge value at the image plus the largest current path below it. This
+dynamically gives a table of an image as show above, where dark spots are low "energy", or lowesge value paths, and very white are high edge value paths.
+
 
 
