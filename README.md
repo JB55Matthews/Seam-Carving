@@ -11,7 +11,8 @@ And by cutting 300 pixels (about a half of the image), get the following result
 Where the main information of the image has stayed, and areas where there is little information has been cut dynamically.
 
 **Note:** Currently this project has not been optimized for speed, and so this process is currently on the order of a few minutes
-for seam carving a lot of some large images, however if more time gets allocated to this project in future this will be quickened substantially ideally.
+for seam carving a high percentage of some large images, however if more time gets allocated to this project in future this 
+will be quickened substantially ideally.
 
 ## Basics of Seam Carving
 
