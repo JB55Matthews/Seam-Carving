@@ -40,4 +40,4 @@ Finally, once we have an energy table calculated, we simply follow the minimum v
 the lowest energy total path. This gets added to our seam. Then, seam[i] = min(rowOF(seam[i-1])[i-1], rowOF(seam[i])[i-1], rowOF(seam[i-1])[i+1]). We simply follow the minimum path down from the starting
 pixel of the seam. This results in a seam as shown above. Then we recreate the original image, ignoring these pixels, and a seam has been removed from the image.
 
-To cut a large amount of this image, we just repeat this process, idetnifying and cutting new seams.
+To cut a large amount of this image, we just repeat this process, identifying and cutting new seams.
