@@ -37,6 +37,8 @@ dynamically gives a table of an image as show above, where dark spots are low "e
 ![Dali2SingleSeam](https://github.com/user-attachments/assets/342bc4ac-86de-44d1-8d3f-09580ef5fbe9)
 
 Finally, once we have an energy table calculated, we simply follow the minimum values of the image downward. We start by finding the minimum value on the top row, which will correspond to 
-the lowest energy total path. This gets added to our seam. Then, seam[i] = min(seam[i-1]~the~
+the lowest energy total path. This gets added to our seam. Then, seam[i] = min(seam[i-1]
+
+H_{2}0
 
 
