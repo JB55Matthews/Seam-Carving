@@ -28,10 +28,15 @@ in the image, so backgroup material is often cut in way of keeping foreground ob
 ### Energy:
 ![Dali2Energy](https://github.com/user-attachments/assets/eef7fdea-a3ff-466c-a818-cad1530c4434)
 
-Second we take the edge detected image and compute what is called an energy image. To identify a path of least edges from the top to the bottom, we dynamically fill in 
+Second we take the edge detected image and compute what we call an energy image using dynamic programming techniques. To identify a path of least edges from the top to the bottom, we dynamically fill in 
 a new table bottom-up with path-summed edge values. Starting at the bottom row, each value (0-255 as image is black and white, and then normalized to 0-1) is filled into the table,
-Then for each next row, row[i] = edge[row[i]] + max((row-1)[i-1], (row-1)[i1], (row-1)[i+1]), i.e, the current edge value at the image plus the largest current path below it. This
-dynamically gives a table of an image as show above, where dark spots are low "energy", or lowesge value paths, and very white are high edge value paths.
+Then for each next row, row[i] = edge(row[i]) + max((row-1)[i-1], (row-1)[i], (row-1)[i+1]), i.e, the current edge value at the image plus the largest current path below it. This
+dynamically gives a table of an image as show above, where dark spots are low "energy", or low edge value paths, and very white are high edge value paths.
 
+### Seam Identification: 
+![Dali2SingleSeam](https://github.com/user-attachments/assets/342bc4ac-86de-44d1-8d3f-09580ef5fbe9)
+
+Finally, once we have an energy table calculated, we simply follow the minimum values of the image downward. We start by finding the minimum value on the top row, which will correspond to 
+the lowest energy total path. This gets added to our seam. Then, seam[i] = min(seam[i-1]~the~
 
 
